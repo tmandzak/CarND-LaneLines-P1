@@ -43,20 +43,21 @@ In order to solve indetified problems following improvements have been implement
 * min_line_length is reduced to catch small fragments of lane lines. See ```parameters['min_line_length_p']```.
 * Outliers in terms of slopes and intercepts of Hough lines are dropped out before averaging. See ```filter_lines``` procedure.
 * Additional slope threshold was applied to eliminate other mild non-lane lines. See ```parameters['slope_threshold']```. 
-* Slopes and intercepts of final two lines are updated by weighted averaging over slopes and intercepts in previous frames. See        ```frame_smooth``` procedure. 
+* Slopes and intercepts of final two lines are updated by weighted averaging over slopes and intercepts from previous frames. It lets reduce redundant shaking of averaged lines. Weights are set to reduce linearly from 1 for the current frame to 0 in a defined frame in the past. Seems linearity makes sense under assuption of a constant velocity of the car. See ```frame_smooth``` procedure. 
 
 Pipeline test on challenge selected images
 
 ![Image 1](callenge_test_image.png "Pipeline test on challenge selected images")
 
+###2. Potential shortcomings with the current pipeline
 
-###2. Identify potential shortcomings with your current pipeline
+Let me list following shortcommings of the pipeline developed:
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+* The pipeline doesn't seem to work as well with more curved lane lines
+* The pipeline doesn't take into account cars driving behind
+* The masking polygon has rigidly defined vertices making the pipeline less usefull when apex ("end of the road" position) is changing 
+* Current solution implements very simple smoothing over historical data and lines are still shaking a little bit
+* A lot more will come with deeper knowledge )
 
 ###3. Suggest possible improvements to your pipeline
 
