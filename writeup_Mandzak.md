@@ -55,12 +55,10 @@ Let me list following shortcommings of the pipeline developed:
 
 * The pipeline doesn't seem to work as well with more curved lane lines
 * The pipeline doesn't take into account cars driving behind
-* The masking polygon has rigidly defined vertices making the pipeline less usefull when apex ("end of the road" position) is changing 
+* The region of interest has rigidly defined vertices making the pipeline less usefull when apex ("end of the road" position) is changing 
 * Current solution implements very simple smoothing over historical data and lines are still shaking a little bit
 * A lot more will come with deeper knowledge )
 
-###3. Suggest possible improvements to your pipeline
+###3. Possible improvements
 
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+A possible improvement would be to implement more intelligent way to define the region of interest and use more elaborated approach to take historical data into account. Another potential improvement could be to implement current solution using object-oriented approach, so that the whole pipeline is incapsulated in a single class that can be reused through inheritance.
