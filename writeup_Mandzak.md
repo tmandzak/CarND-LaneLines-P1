@@ -1,4 +1,4 @@
-#**Finding Lane Lines on the Road** 
+#** Finding Lane Lines on the Road** 
 ---
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-###1. Pipeline description
+### 1. Pipeline description
 
 Main pipeline functionality is implemented in ```detect_lanes``` procedure.
 Initial version of the pipeline consisted of common steps described in lessons' examples:
@@ -49,7 +49,7 @@ Pipeline test on challenge selected images
 
 ![Image 1](callenge_test_image.png "Pipeline test on challenge selected images")
 
-###2. Potential shortcomings with the current pipeline
+### 2. Potential shortcomings with the current pipeline
 
 Let me list following shortcommings of the pipeline developed:
 
@@ -59,6 +59,6 @@ Let me list following shortcommings of the pipeline developed:
 * Current solution implements very simple smoothing over historical data and lines are still shaking a little bit
 * A lot more will come with deeper knowledge )
 
-###3. Possible improvements
+### 3. Possible improvements
 
 A possible improvement would be to implement more intelligent way to define the region of interest and use more elaborated approach to take historical data into account. Another potential improvement could be to implement current solution using object-oriented approach, so that the whole pipeline is incapsulated in a single class that can be reused through inheritance.
